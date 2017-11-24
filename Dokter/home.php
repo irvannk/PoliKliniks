@@ -60,7 +60,7 @@ session_start();
                   <li><a href="home.php"><i class="fa fa-home" style="font-size: 21px;"></i> Home </span></a></li>
                    <li><a><i class="fa fa-user-o" style="font-size: 19px;"></i> Data <span class="fa fa-chevron-down"></span></a>
                    <ul class="nav child_menu">
-                      <li><a href="data_admin.php">Data Admin</a></li>
+                      <li><a href="daftar_pasien.php">Data Pasien</a></li>
                       <li><a href="data_anggota.php">Data Anggota</a></li>
                       <li><a href="data_buku.php">Data Buku</a></li>
                     </ul>
