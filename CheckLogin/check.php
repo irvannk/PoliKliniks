@@ -7,18 +7,29 @@ $password = $_POST['password'];
 $select = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' AND password = '$password' ");
 $check = mysqli_num_rows($select);
 if($check > 0)
-	{
-	  session_start();
-	  $_SESSION['username'] = $row['username'];
-	  $_SESSION['password'] = $row['password'];
-	  header('location:home.php');
+{
+	$ch = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' ");
+	session_start();
+	$user = mysqli_fetch_array($select);
+	$_SESSION['username'] = $user['username'];
+	$nama = $_SESSION['username'];
+	$qwere = "SELECT nama as nama from users where username='$nama' ";
+	$hah = mysqli_query($connect, $qwere);
+	$qq = mysqli_fetch_assoc($hah);
+	$pilih = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' ");
+	$row = mysqli_fetch_array($pilih);
+	$nomo = $row['nama'];
+	$_SESSION['nama'] = $qq['nama'];
+	if($user['role'] == 'Admin'){
+		header("location: ../Admin/home.php");
 	}
-	else
-	{
-	  echo "<center><br><br><br><br><br><br><b>LOGIN GAGAL! </b><br>
-	        Username atau Password Anda tidak benar.<br>";
-	    echo "<br>";
-	  echo "<input class='btn btn-blue' type=button value='ULANGI LAGI' onclick=location.href='login.php'></a></center>";
-
+	else if ($user['role'] == 'Dokter') {
+		header("location: ../Dokter/home.php");
 	}
+}
+else
+{
+	echo "<script>alert('Username atau password salah')</script>";
+	echo "<script>window.location=history.go(-1)</script>";
+}
 ?>

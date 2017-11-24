@@ -25,7 +25,7 @@ session_start();
     }
     </style>
 </head>
- <body class="nav-md">  
+ <body class="nav-md">
   <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col menu_fixed">
@@ -38,14 +38,14 @@ session_start();
 
             <!--  Ini menu profile -->
            <div class="profile">
-              <div class="profile_pic">  
+              <div class="profile_pic">
               <img src='../images/' style='height: 65px; width: 70px;' class='img-circle profile_img'>
               </div>
               <div class='profile_info' style='margin-bottom: 40px;'>
               <h2 style='padding-top: 15px; padding-bottom: 3px;'><a href='profile.php' style='color: white'></a>
               <?php echo $_SESSION['username']; ?>
               </h2>
-              
+
               </div>
             </div>
             <!-- /Sampai sini -->
@@ -81,7 +81,7 @@ session_start();
                             <li><a href="laporan_anggota.php">Data Anggota</a>
                             </li>
                             <li><a href="laporan_buku.php">Data Buku</a>
-                            </li> 
+                            </li>
                           </ul>
                         </li>
                       <li><a>Transaksi<span class="fa fa-chevron-down"></span></a>
@@ -91,7 +91,7 @@ session_start();
                             <li><a href="laporan_pengembalian.php">Pengembalian Buku</a>
                             </li>
                             <li><a href="laporan_perpanjangan.php">Perpanjangan Buku</a>
-                            </li> 
+                            </li>
                           </ul>
                         </li>
                       </li>
@@ -100,12 +100,12 @@ session_start();
                   </li>
               </div>
               <div class="menu_section">
-             
+
               <div style="height: 250px; background-color: #1c2d3e"></div>
               </div>
 
             </div>
-            <!-- /Sampai sini sidebar menunya --> 
+            <!-- /Sampai sini sidebar menunya -->
           </div>
         </div>
 
@@ -126,12 +126,12 @@ session_start();
                   $data  = mysqli_fetch_array($query);
                   $query2 = mysqli_query($connect, "SELECT * FROM users WHERE nama = '$jeneng'");
                   $data2  = mysqli_fetch_array($query2);
-                                                
+
                   ?>
                         <form action="proses-profile.php" method="POST">
                         <?php
                          echo"
-                        <img  data-toggle='modal' data-target='#hahah' class='media-object img-thumbnail user-img' style='width: 35%; height: 10%; margin-bottom: 20px;' src='../images/".$data2['foto']."'>            
+                        <img  data-toggle='modal' data-target='#hahah' class='media-object img-thumbnail user-img' style='width: 35%; height: 10%; margin-bottom: 20px;' src='../images/".$data2['foto']."'>
                         ";
                         echo "<h4>".$_SESSION['nama']."</h4>";
                         ?>
@@ -163,7 +163,7 @@ session_start();
                                             <h4 class="modal-title" id="H4">Ubah Password</h4>
                                         </div>
                                         <div class="modal-body">
-                                      
+
             <form action="proses-password.php" method="POST">
                 <label>Password Lama</label>
                 <input class="form-control" type="password" name="pwlama" required>
@@ -178,7 +178,7 @@ session_start();
                                     </div>
                                 </div>
                          </div>
-                         
+
 
         <!-- Ini navigasi atas -->
         <div class="top_nav">
@@ -214,11 +214,11 @@ session_start();
         <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
         <div class="x_title"><br />
-        <font size="5">Antrian Pasien</font>
+        <font size="5">Home</font>
         </div><br>
-        
+
         <br>
-        
+
         </div>
 
             </div>
